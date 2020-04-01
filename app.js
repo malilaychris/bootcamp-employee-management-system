@@ -15,7 +15,16 @@ let promptInitial = () => {
       type: 'list',
       name: 'response',
       message: 'What would you like to do?',
-      choices: ['View All Employees', 'View All Employees By Department', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Deparments', 'Add Department']
+      choices: [
+        'View All Employees',
+        'View All Employees By Department',
+        'Add Employee',
+        'Update Employee Role',
+        'View All Roles',
+        'Add Role',
+        'View All Deparments',
+        'Add Department'
+      ]
     }).then((answer) => {
       switch (answer) {
         case (answer.response == 'View All Employees'):
@@ -119,7 +128,7 @@ let addEmployee = () => {
       {
         first_name: answer.first_name,
         last_name: answer.last_name,
-        role_id: titleID,
+        role_id: roleId,
         manager_id: managerId
       }, (err, res) => {
         if (err) {
@@ -128,7 +137,7 @@ let addEmployee = () => {
       }
     );
 
-    db.query('INSER INTO role SET ?',
+    db.query('INSERT INTO role SET ?',
       {
         role: answer.role,
         salary: answer.salary,
@@ -148,7 +157,9 @@ let removeEmployee = () => {
 }
 
 let updateEmployeeRole = () => {
+  db.query(
 
+  )
 }
 
 
